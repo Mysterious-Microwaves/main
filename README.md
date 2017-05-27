@@ -4,14 +4,14 @@ The project description
 
 ## Team
 
-- teamMember
-- teamMember
-- teamMember
-- teamMember
+- Ming Feng
+- Ali Elgiadi
+- Oliver Ullman
+- Kriz Cortes
 
 ## Roadmap
 
-View the project roadmap [here](LINK_TO_DOC)
+View the project roadmap [here](https://docs.google.com/document/d/1Uc6yfhYeWaZFlB6Q7AkCwsTridQs7q7b_kHSwMbx0tY/edit)
 
 ## Contributing
 
@@ -34,7 +34,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 - Node 6.9.x
 - Redis 3.2.x
 - Postgresql 9.6.x
-- etc
+- Bookshelf
+- Knex
+- React
+- React Router
+- Docker
+- Passport
+- Mail service ( mailChimp or mailGun )
 
 ## Development
 
