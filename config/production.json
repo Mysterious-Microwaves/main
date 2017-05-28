@@ -1,7 +1,7 @@
 {
   "knex": {
     "connection": {
-      "database": "postgres://viyjyvxbknaejf:d5c7ad679dbb518fc5ecf364b3e9a73cb9a55c2f1b351ed164c3052ec36d4e94@ec2-23-23-223-2.compute-1.amazonaws.com:5432/ddkgogojohfbiv"
+      "database": "pledgeit::DATABASE"
     },
     "debug": false,
     "pool": {
