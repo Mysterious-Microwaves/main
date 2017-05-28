@@ -1,7 +1,12 @@
 {
   "knex": {
+    "client": "postgresql",
     "connection": {
-      "database": "process.env.DATABASE_URL"
+      "database": "thesis",
+      "user": "postgres",
+      "password": "postgres",
+      "host": "localhost",
+      "port": 5432
     },
     "debug": false,
     "pool": {
