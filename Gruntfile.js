@@ -1,7 +1,5 @@
 const config = require('config')['knex'];
 
-const databaseURL = process.env.DATABASE_URL ? process.env.DATABASE_URL : 'template1';
-
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -27,7 +25,7 @@ module.exports = function(grunt) {
           password: config.connection.password,
           host: config.connection.host,
           port: config.connection.port,
-          database: databaseURL
+          database: 'template1'
         },
         name: config.connection.database
       }

@@ -1,7 +1,7 @@
-{
+module.exports = {
   "knex": {
     "connection": {
-      "database": "thesis_prod"
+      "database": process.env.DATABASE_URL
     },
     "debug": false,
     "pool": {
@@ -29,4 +29,4 @@
       "callbackURL": "http://FILL_ME_IN/auth/twitter/callback"
     }
   }
-}
+};
