@@ -1,7 +1,7 @@
 {
   "knex": {
     "connection": {
-      "database": "postgresql-concave-40919"
+      "database": "ddkgogojohfbiv"
     },
     "debug": false,
     "pool": {
