@@ -1,7 +1,7 @@
 {
   "knex": {
     "connection": {
-      "database": "ddkgogojohfbiv"
+      "database": "heroku pg:psql postgresql-concave-40919 --app pledgeit"
     },
     "debug": false,
     "pool": {
