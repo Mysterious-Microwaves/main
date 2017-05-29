@@ -1,0 +1,39 @@
+{
+  "name": "hrsf75-thesis",
+  "scripts": {
+  },
+  "env": {
+    "FACEBOOK_CALLBACK": {
+      "required": true
+    },
+    "FACEBOOK_ID": {
+      "required": true
+    },
+    "FACEBOOK_SECRET": {
+      "required": true
+    },
+    "GOOGLE_CALLBACK": {
+      "required": true
+    },
+    "GOOGLE_ID": {
+      "required": true
+    },
+    "GOOGLE_SECRET": {
+      "required": true
+    },
+    "REDIS_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
