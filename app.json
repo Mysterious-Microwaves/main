@@ -1,9 +1,12 @@
 {
-  "name": "hrsf75-thesis",
-  "scripts": {
+  "name":"pledgeit",
+  "scripts":{
   },
-  "env": {
-    "FACEBOOK_CALLBACK": {
+  "env":{
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
       "required": true
     },
     "FACEBOOK_ID": {
@@ -12,28 +15,23 @@
     "FACEBOOK_SECRET": {
       "required": true
     },
-    "GOOGLE_CALLBACK": {
-      "required": true
-    },
     "GOOGLE_ID": {
       "required": true
     },
     "GOOGLE_SECRET": {
       "required": true
     },
+    "DATABASE_URL": {
+      "required": true
+    },
     "REDIS_URL": {
       "required": true
+    },
+    "FACEBOOK_CALLBACK": {
+      "required": true
+    },
+    "GOOGLE_CALLBACK": {
+      "required": true
     }
-  },
-  "formation": {
-  },
-  "addons": [
-    "heroku-postgresql",
-    "heroku-redis"
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    }
-  ]
+  }
 }
