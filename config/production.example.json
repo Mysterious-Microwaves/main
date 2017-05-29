@@ -12,15 +12,15 @@
 
   "passport": {
     "Google": {
-      "clientID": "616713439946-s5v62nch4t9dsg64sck8attl82a0672m.apps.googleusercontent.com",
-      "clientSecret": "5LFnf4NW05hnV2iBup_cucMm",
-      "callbackURL": "http://pledgeit.herokuapp.com/auth/google/callback"
+      "clientID": "FILL_ME_IN",
+      "clientSecret": "FILL_ME_IN",
+      "callbackURL": "http://FILL_ME_IN/auth/google/callback"
     },
 
     "Facebook": {
-      "clientID": "979371868865646",
-      "clientSecret": "4ea44f62c854971707f74a17b77b0d34",
-      "callbackURL": "http://pledgeit.herokuapp.com/auth/facebook/callback"
+      "clientID": "FILL_ME_IN",
+      "clientSecret": "FILL_ME_IN",
+      "callbackURL": "http://FILL_ME_IN/auth/facebook/callback"
     },
 
     "Twitter": {
