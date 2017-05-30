@@ -1,0 +1,37 @@
+{
+  "name":"pledgeit",
+  "scripts":{
+  },
+  "env":{
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "HEROKU_PARENT_APP_NAME": {
+      "required": true
+    },
+    "FACEBOOK_ID": {
+      "required": true
+    },
+    "FACEBOOK_SECRET": {
+      "required": true
+    },
+    "GOOGLE_ID": {
+      "required": true
+    },
+    "GOOGLE_SECRET": {
+      "required": true
+    },
+    "DATABASE_URL": {
+      "required": true
+    },
+    "REDIS_URL": {
+      "required": true
+    },
+    "FACEBOOK_CALLBACK": {
+      "required": true
+    },
+    "GOOGLE_CALLBACK": {
+      "required": true
+    }
+  }
+}

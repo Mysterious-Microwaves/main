@@ -113,17 +113,17 @@ passport.use('local-login', new LocalStrategy({
 
 /*
 passport.use('google', new GoogleStrategy({
-  clientID: config.Google.clientID,
-  clientSecret: config.Google.clientSecret,
-  callbackURL: config.Google.callbackURL
+  clientID: process.env.GOOGLE_ID || config.Google.clientID,
+  clientSecret: process.env.GOOGLE_SECRET || config.Google.clientSecret,
+  callbackURL: process.env.GOOGLE_CALLBACK || config.Google.callbackURL
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('google', profile, done))
 );
 
 passport.use('facebook', new FacebookStrategy({
-  clientID: config.Facebook.clientID,
-  clientSecret: config.Facebook.clientSecret,
-  callbackURL: config.Facebook.callbackURL,
+  clientID: process.env.FACEBOOK_ID || config.Facebook.clientID,
+  clientSecret: process.env.FACEBOOK_SECRET || config.Facebook.clientSecret,
+  callbackURL: process.env.FACEBOOK_CALLBACK || config.Facebook.callbackURL,
   profileFields: ['id', 'emails', 'name']
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('facebook', profile, done))
@@ -140,12 +140,14 @@ passport.use('twitter', new TwitterStrategy({
 );
 */
 
+
 const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
+  
   return models.Auth.where({ type, oauth_id: oauthProfile.id }).fetch({
     withRelated: ['profile']
   })
     .then(oauthAccount => {
-
+      
       if (oauthAccount) {
         throw oauthAccount;
       }
@@ -157,7 +159,7 @@ const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
       return models.Profile.where({ email: oauthProfile.emails[0].value }).fetch();
     })
     .then(profile => {
-
+      
       let profileInfo = {
         first: oauthProfile.name.givenName,
         last: oauthProfile.name.familyName,
@@ -180,12 +182,14 @@ const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
       }).save();
     })
     .error(err => {
+      // console.log('err', err)
       done(err, null);
     })
     .catch(oauthAccount => {
       if (!oauthAccount) {
         throw oauthAccount;
       }
+
       return oauthAccount.related('profile');
     })
     .then(profile => {
@@ -193,7 +197,7 @@ const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
         done(null, profile.serialize());
       }
     })
-    .catch(() => {
+    .catch((error) => {
       // TODO: This is not working because redirect to login uses req.flash('loginMessage')
       // and there is no access to req here
       done(null, null, {
