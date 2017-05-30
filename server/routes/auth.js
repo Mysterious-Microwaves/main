@@ -8,6 +8,17 @@ router.route('/')
     res.render('index.ejs');
   });
 
+  /*
+  
+    by default it requires the auth before the landing page,
+    have it serve landing page by default and only ask for auth
+    for the user profile
+
+    user hsould be able to browse the full application without
+    the need to log in, unless you want to create/edit/pledge
+
+  */
+
 router.route('/login')
   .get((req, res) => {
     res.render('login.ejs', { message: req.flash('loginMessage') });
@@ -34,6 +45,15 @@ router.route('/profile')
       user: req.user // get the user out of session and pass to template
     });
   });
+
+// similar to profile ejs, 
+// but built with react for the user profile
+// router.route('/user')
+// .get(middleware.auth.verify, (req, res) => {
+//   res.render('user.ejs', {
+//     user: req.user // get the user out of session and pass to template
+//   });
+// });
 
 router.route('/logout')
   .get((req, res) => {
@@ -66,5 +86,11 @@ router.get('/auth/twitter/callback', middleware.passport.authenticate('twitter',
   successRedirect: '/profile',
   failureRedirect: '/login'
 }));
+
+// router for everything else here
+router.route('*')
+  .get(middleware.auth.verify, (req, res) => {
+    res.render('index.ejs');
+  });
 
 module.exports = router;

@@ -111,6 +111,7 @@ passport.use('local-login', new LocalStrategy({
       });
   }));
 
+/*
 passport.use('google', new GoogleStrategy({
   clientID: config.Google.clientID,
   clientSecret: config.Google.clientSecret,
@@ -137,6 +138,7 @@ passport.use('twitter', new TwitterStrategy({
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('twitter', profile, done))
 );
+*/
 
 const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
   return models.Auth.where({ type, oauth_id: oauthProfile.id }).fetch({
