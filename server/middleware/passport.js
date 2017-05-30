@@ -111,6 +111,7 @@ passport.use('local-login', new LocalStrategy({
       });
   }));
 
+/*
 passport.use('google', new GoogleStrategy({
   clientID: process.env.GOOGLE_ID || config.Google.clientID,
   clientSecret: process.env.GOOGLE_SECRET || config.Google.clientSecret,
@@ -128,15 +129,17 @@ passport.use('facebook', new FacebookStrategy({
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('facebook', profile, done))
 );
 
-// // REQUIRES PERMISSIONS FROM TWITTER TO OBTAIN USER EMAIL ADDRESSES
-// passport.use('twitter', new TwitterStrategy({
-//   consumerKey: config.Twitter.consumerKey,
-//   consumerSecret: config.Twitter.consumerSecret,
-//   callbackURL: config.Twitter.callbackURL,
-//   userProfileURL: 'https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true'
-// },
-//   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('twitter', profile, done))
-// );
+// REQUIRES PERMISSIONS FROM TWITTER TO OBTAIN USER EMAIL ADDRESSES
+passport.use('twitter', new TwitterStrategy({
+  consumerKey: config.Twitter.consumerKey,
+  consumerSecret: config.Twitter.consumerSecret,
+  callbackURL: config.Twitter.callbackURL,
+  userProfileURL: 'https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true'
+},
+  (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('twitter', profile, done))
+);
+*/
+
 
 const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
   
