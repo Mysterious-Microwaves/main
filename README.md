@@ -1,6 +1,6 @@
 # Project Name
 
-The project description
+Pledgeit is an online crowd-funding platform that empowers charities to be more innovate and entrepreneurial. Pledgeit aims to lower the barrier of entry for charitable endeavors, in order to increase the flow of new ideas that are implemented.
 
 ## Team
 
@@ -40,9 +40,25 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 - React Router
 - Docker
 - Passport
-- Mail service ( mailChimp or mailGun )
+- Mailgun Mail Service
 
 ## Development
+
+```
+Because Pledgeit relies on multiple microservices, just starting the main repo (the current one) is not enough. At the bare minimum, you must also start the funded microservice. 
+
+For a barebones setup (development):
+
+- Yarn run build (in main repo)
+- Yarn run start (in main repo)
+- Yarn run start (in funded repo)
+Your port will be 3000
+
+For a full development setup, run docker-compose up in the main repo
+
+For a full production setup, go to the docker-compose file (in the main repo) and under web change command from dockerinit to dockerinitprod
+
+```
 
 ### Installing System Dependencies
 
