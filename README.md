@@ -1,4 +1,4 @@
-# Project Name
+# Pledgeit
 
 Pledgeit is an online crowd-funding platform that empowers charities to be more innovate and entrepreneurial. Pledgeit aims to lower the barrier of entry for charitable endeavors, in order to increase the flow of new ideas that are implemented.
 
